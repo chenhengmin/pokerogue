@@ -574,11 +574,11 @@ export default class EggGachaUiHandler extends MessageUiHandler {
             if (!this.scene.gameData.voucherCounts[VoucherType.REGULAR] && !Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
               error = true;
               this.showError(i18next.t("egg:notEnoughVouchers"));
-            } else if (this.scene.gameData.eggs.length < 99) {
+            } else if (this.scene.gameData.eggs.length < 98) {
               if (!Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
                 this.consumeVouchers(VoucherType.REGULAR, 1);
               }
-              this.pull();
+              this.pull(2);
               success = true;
             } else {
               error = true;
@@ -589,11 +589,11 @@ export default class EggGachaUiHandler extends MessageUiHandler {
             if (!this.scene.gameData.voucherCounts[VoucherType.PLUS] && !Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
               error = true;
               this.showError(i18next.t("egg:notEnoughVouchers"));
-            } else if (this.scene.gameData.eggs.length < 95) {
+            } else if (this.scene.gameData.eggs.length < 97) {
               if (!Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
                 this.consumeVouchers(VoucherType.PLUS, 1);
               }
-              this.pull(5);
+              this.pull(3);
               success = true;
             } else {
               error = true;
@@ -627,11 +627,11 @@ export default class EggGachaUiHandler extends MessageUiHandler {
             if (!this.scene.gameData.voucherCounts[VoucherType.GOLDEN] && !Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
               error = true;
               this.showError(i18next.t("egg:notEnoughVouchers"));
-            } else if (this.scene.gameData.eggs.length < 75) {
+            } else if (this.scene.gameData.eggs.length < 95) {
               if (!Overrides.EGG_FREE_GACHA_PULLS_OVERRIDE) {
                 this.consumeVouchers(VoucherType.GOLDEN, 1);
               }
-              this.pull(25);
+              this.pull(5);
               success = true;
             } else {
               error = true;
