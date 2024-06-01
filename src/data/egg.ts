@@ -302,24 +302,24 @@ export class Egg {
 
   private getEggTierDefaultHatchWaves(eggTier?: EggTier): number {
     if (this._species === Species.PHIONE || this._species === Species.MANAPHY) {
-      return 50;
+      return 5;
     }
 
     switch (eggTier ?? this._tier) {
     case EggTier.COMMON:
-      return 10;
+      return 2;
     case EggTier.GREAT:
-      return 25;
+      return 5;
     case EggTier.ULTRA:
-      return 50;
+      return 10;
     }
-    return 100;
+    return 10;
   }
 
   private rollEggTier(): EggTier {
-    const tierValueOffset = this._sourceType === EggSourceType.GACHA_LEGENDARY ? 1 : 0;
+    const tierValueOffset = this._sourceType === EggSourceType.GACHA_LEGENDARY ? 5 : 0;
     const tierValue = Utils.randInt(256);
-    return tierValue >= 52 + tierValueOffset ? EggTier.COMMON : tierValue >= 8 + tierValueOffset ? EggTier.GREAT : tierValue >= 1 + tierValueOffset ? EggTier.ULTRA : EggTier.MASTER;
+    return tierValue >= 200 + tierValueOffset ? EggTier.COMMON : tierValue >= 100 + tierValueOffset ? EggTier.GREAT : tierValue >= 25 + tierValueOffset ? EggTier.ULTRA : EggTier.MASTER;
   }
 
   private rollSpecies(scene: BattleScene): Species {
